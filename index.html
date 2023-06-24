@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Mi Página Web</title>
+  <style>
+    /* Estilos CSS */
+    html,
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      height: 100%;
+
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease;
+      background-image: url("https://img.freepik.com/vector-gratis/fondo-tecnologia-digital-alambre-malla-red_1017-27428.jpg?w=1380&t=st=1687049793~exp=1687050393~hmac=82a4ed687fdcf974cca0bfe4bc4311768710bbe6d6e99e905de99d2c85248866");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #333;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    header {
+      background-color: #000000;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #352a2a;   /* BARRA HOME /QUIENES SOMOS / CONTACTO */
+      padding: 10px;
+      text-align: right;
+    }
+
+    .parrafohome {
+        float: left;
+        width: 50%;
+        padding-right: 20px;
+        box-sizing: border-box;
+        font-weight:bold ;
+    }
+    #gallery-container {
+        float: right;
+        width: 50%;
+        padding-left: 20px;
+        box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+        .parrafohome,
+        #gallery-container {
+            float: none;
+            width: 100%;
+            padding: 0;
+        }
+    }
+
+
+                                      /*ESTILO DE GALERIA DE FOTOS*/
+    .gallery-container {
+      display: flex;
+      width: 800px;
+      height: 600px;
+      justify-content: center;
+    }
+
+    .gallery-container img {
+      width: 0px;
+      flex-grow: 1;
+      object-fit: cover;
+      opacity: 0.8;
+      transition: width 0.5s ease;
+    }
+
+    .gallery-container img:hover {
+      cursor: crosshair;
+      width: 500px;
+      opacity: 1;
+      filter: contrast(120%);
+    }
+
+
+
+
+
+
+                                          /* QUIENES SOMOS */
+    .divquiensomos {
+      display: flex;
+    }
+
+    .Tabla {
+      flex: 1;
+      margin-right: 20px;
+      /* Margen para separar la tabla del párrafo */
+      margin-top: 1%
+    }
+
+    .MGCSquiensomos {
+      flex: 1;
+      margin-top: 4%;
+      text-align: center;
+      font-weight:bold ;
+    }
+
+    #quienes-somos h2 {
+      font-size: 26px;
+      color: #333;
+      margin-bottom: 10px;
+      text-align: center;
+      
+    }
+
+    #quienes-somos p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    #quienes-somos table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #quienes-somos th,
+    #quienes-somos td {
+      border: 1px solid #882c2c;
+      padding: 10px;
+    }
+
+    #quienes-somos th {
+      background-color: #882c2c;
+      color: #fff;
+    }
+
+    #quienes-somos tr:nth-child(even) {
+      background-color: #ddd;
+    }
+
+    #quienes-somos tr:hover {
+      background-color: #ccc;
+    }
+
+    .Nombre {
+      width: 20%;
+    }
+
+    .Edad {
+      width: 20%;
+    }
+
+    body.dark-mode .divquiensomos {
+
+      color: #fff;
+    }
+
+    body.dark-mode #quienes-somos h2,
+    body.dark-mode #quienes-somos p {
+      color: #fff;
+    }
+
+    body.dark-mode #quienes-somos th,
+    body.dark-mode #quienes-somos td {
+      border-color: #888;
+      background-color: #555;
+      color: #fff;
+    }
+
+    body.dark-mode #quienes-somos tr:nth-child(even) {
+      background-color: #444;
+    }
+
+    body.dark-mode #quienes-somos tr:hover {
+      background-color: #666;
+    }
+
+
+                                        /*FORMULARIO DE CONTACTO*/
+
+    .texto_contacto {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .formulario {
+      flex: 1;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .contenedor {
+      display: flex;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fdfdfd;
+      padding: 5px;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+                                           /*TABLA*/
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    table,
+    th,
+    td {
+      border: 1px solid #333;
+      padding: 10px;
+    }
+
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+    }
+
+    form label,
+    form input,
+    form select,
+    form textarea {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    form input,
+    form select,
+    form textarea {
+      width: 100%;
+      padding: 5px;
+    }
+
+    form input[type="submit"] {
+      background-color: #ec4b4b;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th,
+    table td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    form {
+      margin-bottom: 20px;
+    }
+
+    form input[type="text"],
+    form input[type="submit"] {
+      padding: 5px;
+    }
+
+    form input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+
+                                            /*ESTILO DE CRUD o ARMADO DE PC*/
+
+    #armadopc {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #bdcad4;
+      border-radius: 5px;
+    }
+
+    #armadopc h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    #myForm {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #myForm label {
+      font-size: 16px;
+      margin-bottom: 5px;
+    }
+
+    #myForm input[type="text"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    #myForm input[type="submit"] {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #myTable {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    #myTable th,
+    #myTable td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #myTable th {
+      background-color: #f2f2f2;
+    }
+
+    #myTable td:last-child {
+      text-align: center;
+    }
+
+    #myTable button {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    #myTable button:hover {
+      background-color: #45a049;
+    }
+
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .dark-mode #armadopc {
+      background-color: #666;
+    }
+
+    .dark-mode #armadopc h1 {
+      color: #fff;
+    }
+
+    .dark-mode #myForm label {
+      color: #fff;
+    }
+
+    .dark-mode #myForm input[type="text"] {
+      background-color: #555;
+      color: #fff;
+      border-color: #888;
+    }
+
+    .dark-mode #myForm input[type="submit"] {
+      background-color: #777;
+    }
+
+    .dark-mode #myTable th {
+      background-color: #444;
+      color: #fff;
+    }
+
+    .dark-mode #myTable td {
+      border-bottom-color: #888;
+    }
+
+    .dark-mode #myTable button {
+      background-color: #777;
+    }
+
+    .dark-mode #myTable button:hover {
+      background-color: #666;
+    }
+
+                                            /*ESTILO FOOTER*/
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 1%;
+
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .footer-section {
+      flex-basis: 30%;
+      margin-bottom: 20px;
+    }
+
+    .footer-section h3 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .footer-section p,
+    .footer-section ul {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .footer-section ul li {
+      list-style: none;
+    }
+
+    .footer-section ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .footer-section ul li a:hover {
+      color: #99ccff;
+    }
+
+    .social-media {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-media li {
+      list-style: none;
+    }
+
+    .social-media li a {
+      color: #fff;
+      font-size: 18px;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .social-media li a:hover {
+      color: #99ccff;
+    }
+
+    .footer-bottom {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+                                                 /*DARK MODE */
+    .dark-mode {
+      background-image: url("https://e1.pxfuel.com/desktop-wallpaper/497/366/desktop-wallpaper-black-website-backgrounds-black-website-background.jpg");
+      color: #fff;
+    }
+
+    .dark-mode-toggle {
+      display: inline-block;
+      position: relative;
+      width: 60px;
+      height: 31px;
+      
+    }
+
+    .dark-mode-toggle input[type="checkbox"] {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .dark-mode-toggle label {
+      display: block;
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      transition: background-color 0.3s;
+    }
+
+    .dark-mode-toggle label:before {
+      content: "";
+      position: absolute;
+      left: 2px;
+      top: 2px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #fff;
+      transition: transform 0.3s;
+    }
+
+    .dark-mode-toggle input[type="checkbox"]:checked+label {
+      background-color: #555;
+    }
+
+    .dark-mode-toggle input[type="checkbox"]:checked+label:before {
+      transform: translateX(26px);
+    }
+
+    .toggle-text {
+      position: absolute;
+      top: 50%;
+      left: 50px;
+      transform: translateY(-50%);
+      color: #fff;
+      font-size: 14px;
+      transition: opacity 0.3s;
+    }
+
+    .dark-mode-toggle input[type="checkbox"]:checked~.toggle-text {
+      opacity: 1;
+    }
+
+    .dark-mode-toggle input[type="checkbox"]:not(:checked)~.toggle-text {
+      opacity: 0;
+    }
+
+
+    #word-container {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+#letter-input {
+  width: 30px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+ /* GAME*/
+
+
+ #stick-person {  
+  margin: 20px;
+  border: 1px solid #000000;
+  font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#word-container {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#letter-input {
+  width: 30px;
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+}
+
+/* estilo de boton GAME*/
+.comic-button {
+        font-family: "Comic Sans MS", cursive;
+        font-weight: bold;
+    }
+    #remaining-attempts {
+        color: green;
+        font-size: 30px;
+    }
+
+    #remaining-attempts.warning {
+        color: orange;
+        font-size: 30px;
+    }
+
+    #remaining-attempts.danger {
+        color: red;
+        font-size: 30px;
+    }
+
+/*ESTILO PARA EL MENSAJE DE PALABRA CORRECTO O ERRONEA*/
+    .alert {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 18px;
+        color: #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .alert.Success {
+        background-color: #7eff7e;
+        color: #006400;
+    }
+
+    .alert.Error {
+        background-color: #ff7e7e;
+        color: #8b0000;
+    }
+
+                        /*ACA TERMINAN LOS ESTILOS CSS Y INICA EL HTML */
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">SOPORTE TECNICO COMPUTACIONAL</h1>
+
+  </header>
+  <main>
+    <nav>
+      <ul>
+        <li><a href="#home" onclick="showSection('home')">Home</a></li>
+        <li><a href="#quienes-somos" onclick="showSection('quienes-somos')">Quienes somos</a></li>
+        <li><a href="#contacto" onclick="showSection('contacto')">Contacto</a></li>
+        <li><a href="#armadopc" onclick="showSection('armadopc')">ARMADO PC</a></li>
+        <li><a href="#game" onclick="showSection('game')">GAME</a></li>
+
+        <div class="dark-mode-toggle">
+          <input type="checkbox" id="dark-mode-checkbox">
+          <label for="dark-mode-checkbox"></label>
+
+        </div>
+
+
+      </ul>
+    </nav>
+    <section id="home">
+      <div class="Bienvenido">
+       
+          <h1 style="text-align: center;">Bienvenido a nuestro servicio de soporte técnico para computadoras!</h1>
+          <DIV class="parrafohome">
+            <p>En nuestro sitio web, encontrarás soluciones y asistencia experta para resolver cualquier problema que puedas
+              tener con tu computadora. Ya sea que necesites ayuda para solucionar errores, configurar software, optimizar el
+              rendimiento de tu equipo o cualquier otra consulta técnica, estamos aquí para ayudarte.</p>
+
+            <p>Nuestro equipo de técnicos altamente capacitados está listo para brindarte la mejor atención y orientación. Nos
+              esforzamos por ofrecer soluciones eficientes y personalizadas para satisfacer tus necesidades específicas.</p>
+
+            <p>Explora nuestros recursos, guías y artículos informativos para obtener consejos útiles y técnicas avanzadas. Si
+              no
+              encuentras lo que buscas, no dudes en ponerte en contacto con nosotros a través de nuestro formulario de
+              contacto
+              o chat en vivo. Estamos comprometidos a brindarte un servicio excepcional y una experiencia sin complicaciones.
+              <p>¡Gracias por confiar en nosotros como tu fuente confiable de soporte técnico para computadoras!</p>
+              
+  
+
+            </p>
+           
+          </DIV>
+      </div>
+
+      
+      </p>
+      <div id="gallery-container" class="gallery-container">
+        <img
+          src="https://portalinnova.cl/wp-content/uploads/2023/04/7-caracteristicas-que-todo-notebook-gamer-debe-tener-90555.jpg.jpg">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0527/1620/8326/files/como-armar-una-pc-gamer-gama-alta_480x480.webp?v=1658779084"
+          alt="pc">
+        <img src="https://assets-prd.ignimgs.com/2022/04/12/msigamingztriortx3080-1649781136521.jpg?width=1920"
+          alt="GPU">
+        <img src="https://smartnetworksolutions.us/wp-content/uploads/2021/09/SERVICIO-E-1080x664.jpg" alt="soporte">
+      </div>
+    </section>
+
+
+    <section id="quienes-somos">
+      <h2>Quienes somos</h2>
+      <div class="divquiensomos">
+        <div class="MGCSquiensomos">
+          <p>En MGCS SOLUTIONS, somos una empresa líder en el campo del soporte técnico de computadoras. Nuestro equipo está compuesto por profesionales altamente capacitados y apasionados por la tecnología.</p>
+
+          <p>En conjunto, nuestro equipo de profesionales combina habilidades técnicas, experiencia y un compromiso inquebrantable con la satisfacción del cliente. Trabajamos arduamente para garantizar que cada interacción con nuestros clientes sea positiva, y nos enorgullece proporcionar soluciones confiables y eficientes en el campo del soporte técnico de computadoras.</p>
+          
+          <p>Confía en MGCS SOLUTIONS para satisfacer todas tus necesidades de soporte técnico. Estamos aquí para ayudarte a resolver cualquier problema tecnológico y brindarte la tranquilidad que necesitas.</p>
+          
+
+        </div>
+
+
+        <div class="Tabla">
+         
+          <table>
+            <p style="font-weight: bold;">Información sobre nuestra empresa o equipo.</p>
+            <tr>
+              <th class="Nombre">Nombre</th>
+              <th class="Titulo">Titulo</th>
+              <th class="Especialidad">Especialidad</th>
+            </tr>
+            <tr>
+              <td class="Nombre">Andres Gajardo</td>
+              <td class="Titulo">31</td>
+              <td class="Especialidad">Mantenciones GPU y PC</td>
+            </tr>
+            <tr>
+              <td class="Nombre">Hector Cano</td>
+              <td class="Titulo">33</td>
+              <td class="Especialidad">Formateos y configuraciones</td>
+            </tr>
+            <tr>
+              <td class="Nombre">Guido Soto</td>
+              <td class="Titulo">33</td>
+              <td class="Especialidad">Armado y Configuracion</td>
+            </tr>
+            <tr>
+              <td class="Nombre">Matias Mendoza</td>
+              <td class="Edad">27</td>
+              <td class="Especialidad">Mantencion PC y Notebook</td>
+
+            </tr>
+          </table>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <section id="contacto">
+      <h2 style="text-align: center;">Contacto</h2>
+      <div class="contenedor">
+        <div class="texto_contacto">
+          <h2>¡Gracias por contactar nuestro equipo de soporte técnico!</h2>
+          <p>Estamos aquí para ayudarte con cualquier pregunta, problema o inquietud que puedas tener.</p>
+          <p>Nuestro objetivo es brindarte una asistencia excepcional y resolver tus problemas de manera rápida y
+            eficiente. Por favor, completa el siguiente formulario de contacto y uno de nuestros representantes de
+            soporte
+            se pondrá en contacto contigo a la brevedad:</p>
+          <p>Agradecemos tu paciencia y te aseguramos que haremos todo lo posible para proporcionarte una solución
+            satisfactoria. ¡Estamos ansiosos por ayudarte y esperamos poder resolver tus inquietudes pronto!</p>
+          <p>Atentamente,<br>El equipo de soporte técnico</p>
+
+
+          <img
+            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi5lYijEBqdjKEWKbxxVzOnySRmbbCgTN8bGirJbhLQXEdtiMUMF7m7A5DkBt_FayZYXQmVSpOevD_rqeJNNXFyYeWIX_4si2EZlq35MZbs_t2su0b0lHrjWTUWSI3ZchrmwCJPOZOp9Dvmg1mTAWdePcPUdSwhQW6x32QjEjPwAof76qcRb6UNtLwS/s800/computer-repair-800x534.jpg"
+            alt="imagesnew2" width="60%">
+        </div>
+
+        <div class="formulario">
+          <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" required>
+            
+            <label for="fecha">Fecha de solicitud:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <label for="Telefono">Telefono:</label>
+            <input type="text" id="Telefono" name="Telefono" oninput="validarNumero(this)" required>
+            <label for="num">Edad:</label>
+            <input type="number" id="num" name="num" required>
+            <label for="opciones">Servicio:</label>
+            <select id="opciones" name="opciones">
+              <option value="opcion1">Formateo</option>
+              <option value="opcion2">Mantencion</option>
+              <option value="opcion3">Reparacion</option>
+            </select>
+            <label for="texto">Observaciones:</label>
+            <textarea id="texto" name="texto" required></textarea>
+
+            <input type="checkbox" id="checkbox" name="checkbox">
+            <label for="checkbox">Acepto los términos y condiciones</label>
+            <input type="submit" value="Enviar" required>
+          </form>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+
+
+    <section id="armadopc">
+      <h1>Arma tu PC</h1>
+
+      <form id="myForm">
+        <label for="name">Nombre de Producto:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="price">Precio:</label>
+        <input type="text" id="price" name="price" required>
+        <label for="quantity">Cantidad:</label>
+        <input type="text" id="quantity" name="quantity" required>
+        <input type="submit" value="Agregar">
+      </form>
+      <input type="button" class="button" value="Exportar JSON" onclick="exportData()" /> 
+      <input type="file" id="fileInput" class="file-input" accept=".json" />
+      <input type="button" class="button" value="Importar JSON" onclick="importData()" />   
+       <!--hay q seleccionar un archivo json y luego presionar boton importar JSON-->
+      
+      <table id="myTable">
+        <tr>
+          <th>Nombre de Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Editar / Eliminar</th>
+        </tr>
+      </table>
+    </section>
+    
+
+
+    <section id="game">
+      <pre id="stick-person">
+        +---+ 
+        |   | 
+        O   | 
+       /|\  | 
+       / \  | 
+            | 
+     =========
+     </pre>
+     <div id="word-container"></div>
+     <p style="text-align: center;">Ingresa una letra: <input type="text" id="letter-input"></p>
+     <button style="text-align: center; display: block; margin: 0 auto;" class="comic-button"  onclick="guessLetter()">Adivinar</button>
+
+     
+     <p style="text-align: center;">Intentos restantes: <span id="remaining-attempts">4</span></p> 
+</script>
+    <script>
+
+
+
+
+
+                                /* JAVASCRIPT */
+/*GAME **/
+
+var remainingAttempts = 4;
+  var word = "javascript"; // Palabra a adivinar, se puede modificar
+  var guessedLetters = [];
+  var remainingGuesses = 4;
+
+  var hiddenWord = "";
+  for (var i = 0; i < word.length; i++) {
+    hiddenWord += "_";
+  }
+
+  var stickPersonStages0 = [   // colgado inicial, cada ves q se reinicie el juego iniciara con este colgado
+  "    +---+\n" +
+      "    |   |\n" +
+      "    O   |\n" +
+      "   /|\\  |\n" +
+      "   / \\  |\n" +
+      "        |\n" +
+      "  =========\n"
+
+  ];
+  var stickPersonStages = [
+    // sin piernas
+    "    +---+\n" +
+      "    |   |\n" +
+      "    O   |\n" +
+      "   /|\\  |\n" +
+      "        |\n" +
+      "        |\n" +
+      "  =========\n"
+
+  ];
+
+  var stickPersonStages2 = [
+    // sin piernas y brazos 
+    "    +---+\n" +
+      "    |   |\n" +
+      "    O   |\n" +
+      "    |   |\n" +
+      "        |\n" +
+      "        |\n" +
+      "  =========\n",
+  ];
+
+  var stickPersonStages3 = [
+    // sin cuerpo
+    `   +--+ 
+   |   | 
+   O   | 
+       | 
+       | 
+       | 
+========="`
+  ];
+
+  function updateWordContainer() {
+    document.getElementById("word-container").textContent = hiddenWord;
+  }
+
+  function guessLetter() {
+    var letterInput = document.getElementById("letter-input");
+    var letter = letterInput.value.toLowerCase();
+
+    if (letter.length !== 1) {
+      alert("Ingresa una única letra.");
+      return;
+    }
+
+    if (guessedLetters.includes(letter)) {
+      alert("Ya has adivinado esa letra.");
+      return;
+    }
+
+    guessedLetters.push(letter);
+
+    if (word.includes(letter)) {
+      for (var i = 0; i < word.length; i++) {
+        if (word[i] === letter) {
+          hiddenWord = hiddenWord.substr(0, i) + letter + hiddenWord.substr(i + 1);
+        }
+      }
+
+      if (!hiddenWord.includes("_")) {
+        showAlert("¡Felicidades! Has adivinado la palabra correctamente: " + word,"Success");
+        resetGame();
+      }
+    } else {
+      remainingGuesses--;
+
+      if (remainingGuesses >= 0) {
+        if (remainingGuesses === 3) {
+          document.getElementById("stick-person").innerHTML = stickPersonStages[0];
+        } else if (remainingGuesses === 2) {
+          document.getElementById("stick-person").innerHTML = stickPersonStages2[0];
+        } else if (remainingGuesses === 1) {
+          document.getElementById("stick-person").innerHTML = stickPersonStages3[0];
+        }
+      }
+
+      if (remainingGuesses === 0) {
+        showAlert("¡Oh no! Has perdido. La palabra correcta era: " + word,"Error");
+        resetGame();
+      }
+
+      updateRemainingAttempts();
+    }
+    function showAlert(message, type) {
+        var alertElement = document.createElement("div");
+        alertElement.className = "alert " + type;
+        alertElement.textContent = message;
+        document.body.appendChild(alertElement);
+
+        setTimeout(function () {
+            alertElement.parentNode.removeChild(alertElement);
+        }, 3000);
+    }
+
+    updateWordContainer();
+    letterInput.value = "";
+  }
+   showAlert
+
+  function updateRemainingAttempts() {
+    var remainingAttemptsElement = document.getElementById("remaining-attempts");
+    remainingAttemptsElement.textContent = remainingGuesses;
+  }
+
+  function resetGame() {       // funcion de reinicio de juego
+    guessedLetters = [];
+    remainingGuesses = 4;
+    hiddenWord = "";
+    for (var i = 0; i < word.length; i++) {
+      hiddenWord += "_";
+    }
+
+    updateWordContainer();
+    document.getElementById("stick-person").innerHTML = stickPersonStages0; // Establece el mono con el cuerpo completo
+    updateRemainingAttempts();
+  }
+
+  updateWordContainer();
+
+  function updateRemainingAttempts() {   // funcion para modificar color de intentes restantes
+        var remainingAttemptsElement = document.getElementById("remaining-attempts");
+        remainingAttemptsElement.textContent = remainingGuesses;
+
+        if (remainingGuesses === 4) {
+            remainingAttemptsElement.classList.remove("warning");
+            remainingAttemptsElement.classList.remove("danger");
+            remainingAttemptsElement.style.color = "green";
+        } else if (remainingGuesses === 3) {
+            remainingAttemptsElement.classList.add("warning");
+            remainingAttemptsElement.classList.remove("danger");
+        } else if (remainingGuesses === 2) {
+            remainingAttemptsElement.classList.add("warning");
+            remainingAttemptsElement.classList.remove("danger");
+        } else if (remainingGuesses === 1) {
+            remainingAttemptsElement.classList.remove("warning");
+            remainingAttemptsElement.classList.add("danger");
+        }
+    }
+
+
+
+
+
+
+      /* JS TABLA DE ARMADO DE PC */
+      var table = document.getElementById("myTable");
+      var form = document.getElementById("myForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        var nameInput = document.getElementById("name");
+        var priceInput = document.getElementById("price");
+        var quantityInput = document.getElementById("quantity");
+
+        var name = nameInput.value;
+        var price = priceInput.value;
+        var quantity = quantityInput.value;
+
+        if (name !== "" && price !== "" && quantity !== "") {
+          var row = table.insertRow(-1);
+
+          var nameCell = row.insertCell(0);
+          nameCell.innerHTML = name;
+
+          var priceCell = row.insertCell(1);
+          priceCell.innerHTML = price;
+
+          var quantityCell = row.insertCell(2);
+          quantityCell.innerHTML = quantity;
+
+          var actionsCell = row.insertCell(3);
+          actionsCell.innerHTML = '<button onclick="editRow(this)">Editar</button> <button onclick="deleteRow(this)">Eliminar</button>';
+
+          nameInput.value = "";
+          priceInput.value = "";
+          quantityInput.value = "";
+        }
+      });
+
+      function editRow(button) {
+        var row = button.parentNode.parentNode;
+
+        var name = row.cells[0].innerHTML;
+        var price = row.cells[1].innerHTML;
+        var quantity = row.cells[2].innerHTML;
+
+        var nameInput = document.getElementById("name");
+        var priceInput = document.getElementById("price");
+        var quantityInput = document.getElementById("quantity");
+
+        nameInput.value = name;
+        priceInput.value = price;
+        quantityInput.value = quantity;
+
+        row.remove();
+      }
+
+      function deleteRow(button) {
+        var row = button.parentNode.parentNode;
+        row.remove();
+      }
+
+
+
+  // VALIDACION DE QUE CAMPO TELEFONO SOLO TENGA NUMEROS INGRESADOS
+      function validarNumero(input) {
+    input.value = input.value.replace(/\D/g, '');
+  }
+
+
+
+
+
+/**************** JSON *******************/
+/*EXPORTAR*/
+function exportData() { // Obtener los datos de la tabla
+  var data = [];
+  var rows = table.rows;
+  for (var i = 1; i < rows.length; i++) {
+    var row = rows[i];
+    var rowData = {
+      name: row.cells[0].innerHTML,
+      price: row.cells[1].innerHTML,
+      quantity: row.cells[2].innerHTML
+    };
+    data.push(rowData);
+  }
+
+  // Crear el archivo JSON
+  var jsonData = JSON.stringify(data, null, 2);
+  var blob = new Blob([jsonData], { type: "application/json" });
+  var url = URL.createObjectURL(blob);
+
+  // Descargar el archivo
+  var a = document.createElement("a");
+  a.href = url;
+  a.download = "data.json";
+  a.click();
+
+  // Liberar el objeto URL
+  URL.revokeObjectURL(url);
+}
+
+/*IMPORTAR JSON */
+function importData() {
+  var fileInput = document.getElementById("fileInput");
+  var file = fileInput.files[0];
+
+  var reader = new FileReader();
+  reader.onload = function (event) {
+    var jsonData = event.target.result;
+    var data = JSON.parse(jsonData);
+
+    // Limpiar la tabla existente
+    clearTable();
+
+    // Agregar los datos importados a la tabla
+    for (var i = 0; i < data.length; i++) {
+      var row = table.insertRow(-1);
+
+      var nameCell = row.insertCell(0);
+      nameCell.innerHTML = data[i].name;
+
+      var priceCell = row.insertCell(1);
+      priceCell.innerHTML = data[i].price;
+
+      var quantityCell = row.insertCell(2);
+      quantityCell.innerHTML = data[i].quantity;
+
+      var actionsCell = row.insertCell(3);
+      actionsCell.innerHTML =
+        '<button onclick="editRow(this)">Editar</button> <button onclick="deleteRow(this)">Eliminar</button>';
+    }
+  };
+  reader.readAsText(file);
+}
+function clearTable() {
+  var rowCount = table.rows.length;
+  for (var i = rowCount - 1; i > 0; i--) {
+    table.deleteRow(i);
+  }
+}
+    </script>
+
+    <script>
+      function showSection(sectionId) {
+        var sections = document.getElementsByTagName("section");
+        for (var i = 0; i < sections.length; i++) {
+          sections[i].style.display = "none";
+        }
+        document.getElementById(sectionId).style.display = "block";
+
+        if (sectionId === 'home') {
+          // Mostrar galería de fotos en la sección "Home"
+          var galleryContainer = document.getElementById("gallery-container");
+          galleryContainer.innerHTML = ''; // Limpiar el contenedor de galería
+
+          // imágenes q iran en el bloque de fotos 
+          var imageSources = [
+            "https://portalinnova.cl/wp-content/uploads/2023/04/7-caracteristicas-que-todo-notebook-gamer-debe-tener-90555.jpg.jpg",
+            "https://cdn.shopify.com/s/files/1/0527/1620/8326/files/como-armar-una-pc-gamer-gama-alta_480x480.webp?v=1658779084",
+            "https://assets-prd.ignimgs.com/2022/04/12/msigamingztriortx3080-1649781136521.jpg?width=1920",
+            "https://smartnetworksolutions.us/wp-content/uploads/2021/09/SERVICIO-E-1080x664.jpg"
+          ];
+
+          imageSources.forEach(function (source) {
+            var image = document.createElement("img");
+            image.src = source;
+            image.classList.add("gallery-image");
+            galleryContainer.appendChild(image);
+          });
+        }
+      }
+
+
+      // Mostrar la sección "Home" al cargar la página
+      document.addEventListener("DOMContentLoaded", function () {
+        showSection('home');
+      });
+
+        // DARK MODE SWICH
+      const darkModeToggle = document.getElementById('dark-mode-checkbox');
+      const body = document.body;
+
+      darkModeToggle.addEventListener('change', function () {
+        body.classList.toggle('dark-mode');
+      });
+
+    </script>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>Teléfono: +56993427198</p>
+        <p>Email: a.gajardo23@hotmail.com</p>
+      </div>
+      <div class="footer-section">
+        <h3>Enlaces</h3>
+        <ul>
+          <li><a href="https://www.linkedin.com/in/andres-gm92/">LinkedIn</a></li>
+          <li><a href="https://github.com/Av3nGeR23?tab=repositories">Github</a></li>
+
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Redes sociales</h3>
+        <ul class="social-media">
+          <li><a href="https://www.facebook.com/AndresGajardo23/"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Todos los derechos reservados &copy; 2023 | Andres Gajardo</p>
+    </div>
+  </footer>
+</body>
+
+</html>
